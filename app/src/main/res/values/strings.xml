@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GetHelp</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    <!--Page titles-->
+    <string name="admin_home_title">Admin Home</string>
+    <string name="service_types_title">Service Types</string>
+    <string name="user_approvals_title">User Approvals</string>
+    <string name="approve_user_title">Approve User</string>
 </resources>
