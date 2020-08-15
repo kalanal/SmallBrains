@@ -8,4 +8,5 @@
     <string name="service_types_title">Service Types</string>
     <string name="user_approvals_title">User Approvals</string>
     <string name="approve_user_title">Approve User</string>
+    <string name="see_more_btn1">See More</string>
 </resources>
