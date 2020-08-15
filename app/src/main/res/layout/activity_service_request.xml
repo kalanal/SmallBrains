@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceRequest">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/textDefault"
+        android:backgroundTint="@color/colorBackground"
+        tools:context=".ProTipList">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="391dp"
+            android:layout_height="519dp"
+            android:background="@color/textDefault"
+            android:textAlignment="viewStart"
+            android:textColor="#0E0D0D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.419" />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="145dp"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:text="RESPOND"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.816" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="361dp"
+            android:layout_height="313dp"
+            android:text=" Customer name : Ben Smith\n\n I want to buy a new laptop with some\n decent specifications as I am planning\n to use it for my educational purposes\n and also for gaming.\n\n Price can be managed but I'm hoping\n to buy one for Rs.150000 or less.\n\n Please help me select a good laptop\n as my laptop starts next month."
+            android:textColor="#100F0F"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.462" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="322dp"
+            android:layout_height="67dp"
+            android:text=" Need help selecting a\n new laptop"
+            android:textAlignment="center"
+            android:textColor="#100F0F"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.096" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/colorPrimary"
+    tools:context=".ServiceRequestList">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/textDefault"
+        android:backgroundTint="@color/colorBackground"
+        tools:context=".ProTipList">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="384dp"
+            android:layout_height="125dp"
+            android:background="@color/textDefault"
+            android:text=" Ben Smith"
+            android:textAlignment="viewStart"
+            android:textColor="#0E0D0D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.349" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="384dp"
+            android:layout_height="125dp"
+            android:background="@color/textDefault"
+            android:text=" Angel Garza"
+            android:textAlignment="viewStart"
+            android:textColor="#0E0D0D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.587" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="384dp"
+            android:layout_height="125dp"
+            android:background="@color/textDefault"
+            android:text=" Liz Alba"
+            android:textAlignment="viewStart"
+            android:textColor="#0E0D0D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.823" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="98dp"
+            android:layout_height="39dp"
+            android:background="@color/colorPrimary"
+            android:text="See more"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.843"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.382" />
+
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="98dp"
+            android:layout_height="39dp"
+            android:background="@color/colorPrimary"
+            android:text="See more"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.843"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.608" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="252dp"
+            android:layout_height="111dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="154dp"
+            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.371"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="154dp"
+            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="154dp"
+            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.822"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="GetHelp"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.198" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="246dp"
+            android:layout_height="109dp"
+            android:text=" Need help seeking a \n new laptop"
+            android:textColor="#100F0F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.344" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="246dp"
+            android:layout_height="109dp"
+            android:text="My laptop is broken, how do \n I fix it?"
+            android:textColor="#100F0F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.583" />
+
+        <Button
+            android:id="@+id/button18"
+            android:layout_width="98dp"
+            android:layout_height="39dp"
+            android:background="@color/colorPrimary"
+            android:text="See more"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.843"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.812" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="246dp"
+            android:layout_height="109dp"
+            android:text="My printer is getting stuck \n and provides misprints."
+            android:textColor="#100F0F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.815" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
