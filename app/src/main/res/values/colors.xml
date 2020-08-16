@@ -5,4 +5,9 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="textDefault">#FFFFFF</color>
     <color name="colorBackground">#D6D6D6</color>
+
+    <!--Pie Chart-->
+    <color name="pieSlice1">#ab4ded</color>
+        <color name="pieSlice2">#7806e3</color>
+    <color name="pieSlice3">#844dea</color>
 </resources>
