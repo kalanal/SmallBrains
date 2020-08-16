@@ -14,48 +14,48 @@
         android:columnOrderPreserved="false">
 
         <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
             android:id="@+id/typeCard1"
-            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1">
+            android:layout_margin="20dp">
 
             <androidx.cardview.widget.CardView
-            android:id="@+id/parentCard1"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+                android:id="@+id/parentCard1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
-                android:text="Technician"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="20dp"
+                    android:text="Technician"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/serviceArrow1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="20dp"
-                android:onClick="onPressDropdown"
-                android:src="@drawable/ic_arrow_up" />
+                <ImageView
+                    android:id="@+id/serviceArrow1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:onClick="onPressDropdown"
+                    android:src="@drawable/ic_arrow_up" />
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
             <FrameLayout
                 android:id="@+id/childCard1"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_below="@+id/parentCard1"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/border_back"
                 android:elevation="9dp">
 
@@ -70,14 +70,15 @@
 
 
             </FrameLayout>
+
             <FrameLayout
                 android:id="@+id/childCard2"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_below="@+id/childCard1"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/border_back"
                 android:elevation="8dp">
 
@@ -92,14 +93,15 @@
 
 
             </FrameLayout>
+
             <FrameLayout
                 android:id="@+id/childCard3"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_below="@+id/childCard2"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
                 android:background="@drawable/border_back"
                 android:elevation="7dp">
 
@@ -118,12 +120,12 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
             android:id="@+id/typeCard2"
-            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1">
+            android:layout_margin="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -153,12 +155,12 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
             android:id="@+id/typeCard3"
-            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1">
+            android:layout_margin="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -182,11 +184,23 @@
     </GridLayout>
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_add_item"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/newServiceBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentRight="true"
-        android:layout_margin="20dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:src="@drawable/ic_add_item" />
+
+    <ImageView
+        android:id="@+id/editServiceBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_toStartOf="@id/newServiceBtn"
+        android:clickable="true"
+        android:src="@drawable/ic_edit_item" />
 
 </RelativeLayout>
