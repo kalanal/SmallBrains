@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_user"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/userPic"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/pro_pic_back"/>
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_below="@id/userPic"/>
+
+            <TextView
+                android:id="@+id/userProffesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electrician"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_below="@+id/userName"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:id="@+id/userDescription"
+                android:layout_below="@+id/userProffesion"
+                android:layout_margin="20dp"
+                android:background="@drawable/no_border_back">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_placeholder"
+                android:textSize="20sp" />
+
+            </ScrollView>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/userExperience"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/userDescription"
+                android:background="@drawable/no_border_back">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exp_placeholder"
+                android:textSize="20sp"/>
+
+            </ScrollView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@id/userExperience"
+                android:alignmentMode="alignMargins"
+                android:columnCount="3"
+                android:rowCount="1"
+                android:columnOrderPreserved="false">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:id="@+id/pic1">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_demo_pic"
+                        android:layout_centerHorizontal="true"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:id="@+id/pic2">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_demo_pic"
+                        android:layout_centerHorizontal="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:id="@+id/pic3">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_demo_pic"
+                        android:layout_centerHorizontal="true" />
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rejectBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/darker_gray"
+                android:onClick="onPressViewApprovals"
+                android:text="Reject" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/approveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@id/rejectBtn"
+                android:background="@android:color/darker_gray"
+                android:onClick="onPressViewApprovals"
+                android:text="Approve" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
