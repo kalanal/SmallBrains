@@ -23,5 +23,25 @@
     </string-array>
     <string-array name="Electrician">
     </string-array>
+  
+    <!--Sudaraka -->
+    <string name="see_more_btn1">See More</string>
+    <string name="accept_btn">Accept</string>
+    <string name="decline_btn">Decline</string>
+    <string name="respond_btn">Respond</string>
+    <string name="post_btn">Post</string>
+    <string name="delete_btn">Delete</string>
+    <string name="add_btn">Add</string>
+    <string name="update_btn">Update</string>
+    <string name="editprofile_btn">Edit Profile</string>
+    <string name="professional_profile">Professional Profile</string>
+    <string name="pro_tip_add">Post Pro Tip</string>
+    <string name="pro_tip_list">Post Pro List</string>
+    <string name="service_request_list">Service Request List</string>
+    <string name="customer_request_list">Customer Request List</string>
+    <string name="service_request">Service Request</string>
+    <string name="customer_request">Customer Request</string>
+    <string name="performance_report">Performance Report</string>
 
 </resources>
+
