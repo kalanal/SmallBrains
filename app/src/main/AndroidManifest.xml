@@ -9,7 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+      
+        <!-- Kalana's Activities-->
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".ProfessionalReg" />
+        <activity
+            android:name=".EditUser1"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>      
+      
+        <!-- Sudaraka's Activities-->
         <activity android:name=".ProfessionalProfile"
             android:label="@string/professional_profile">
 <!--                    <intent-filter>-->
@@ -74,17 +89,17 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity
-            android:name=".MainActivity"
+      
+        <!--Ryans Activities -->
+        <activity android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
-        <activity android:name=".SignUp" />
     </application>
 
 </manifest>

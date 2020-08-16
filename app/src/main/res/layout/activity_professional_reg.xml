@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1D1D1"
+    tools:context=".ProfessionalReg">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="351dp"
+        android:layout_height="380dp"
+        android:background="#CAC9C9"
+        android:fillViewport="true"
+        android:foregroundTint="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="152dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/user_type1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#7e2199" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="276dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/upld_text"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="108dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#7e2199"
+                app:srcCompat="@android:drawable/ic_menu_upload" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="282dp"
+                android:layout_height="57dp"
+                android:layout_margin="15dp"
+                android:layout_marginLeft="9dp"
+                android:text="@string/appr_text"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#7e2199"
+                android:text="@string/ok_btn"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
