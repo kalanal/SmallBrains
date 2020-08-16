@@ -8,6 +8,6 @@
 
     <!--Pie Chart-->
     <color name="pieSlice1">#ab4ded</color>
-        <color name="pieSlice2">#7806e3</color>
+    <color name="pieSlice2">#7806e3</color>
     <color name="pieSlice3">#844dea</color>
 </resources>

@@ -13,8 +13,6 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
