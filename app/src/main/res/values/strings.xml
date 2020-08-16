@@ -8,6 +8,8 @@
     <string name="service_types_title">Service Types</string>
     <string name="user_approvals_title">User Approvals</string>
     <string name="approve_user_title">Approve User</string>
+    
+    <!--Sudaraka -->
     <string name="see_more_btn1">See More</string>
     <string name="accept_btn">Accept</string>
     <string name="decline_btn">Decline</string>
