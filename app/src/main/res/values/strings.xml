@@ -8,7 +8,7 @@
     <string name="service_types_title">Service Types</string>
     <string name="user_approvals_title">User Approvals</string>
     <string name="approve_user_title">Approve User</string>
-
+  
     <!--Placeholders-->
     <string name="about_placeholder">About</string>
     <string name="exp_placeholder">Professional Experience</string>
@@ -42,6 +42,28 @@
     <string name="service_request">Service Request</string>
     <string name="customer_request">Customer Request</string>
     <string name="performance_report">Performance Report</string>
+  
+    <!--Kalana-->
+    <string name="SignUpTitle">Signup for GetHelp!</string>
+    <string name="existing_user">Already have an account?</string>
+    <string name="user_type1">Professional</string>
+    <string name="user_type2">Consumer</string>
+    <string name="email_field1">Email</string>
+    <string name="username_field1">Username</string>
+    <string name="age_field1">Age</string>
+    <string name="phone_field1">Phone</string>
+    <string name="home_town_field1">Home Town</string>
+    <string name="sign_up_btn">Signup</string>
+    <string name="save_btn">Save</string>
+    <string name="delete_btn">Delete</string>
+    <string name="password_field1">Password</string>
+    <string name="login_btn1">Login</string>
+    <string name="upld_text">Please upload a document with your details about professional qualification</string>
+    <string name="appr_text">Your account will be reviwed and approved within 24 hours</string>
+    <string name="ok_btn">OK</string>
+    <string name="fb_link">Continue with Facebook</string>
+    <string name="goole_link">Continue with Google</string>
+    <string name="forgot_pwd_link">Forgot password?</string>
+    <string name="new_user">Need an account?</string>
 
 </resources>
-
