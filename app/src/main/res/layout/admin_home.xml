@@ -6,97 +6,322 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-    <LinearLayout
+
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="3">
 
-        <GridLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="1"
-            android:rowCount="3"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false">
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="@color/colorPrimary">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/overviewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Overview"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/helpServicesSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/overviewTitle"
+                    android:paddingStart="10dp"
+                    android:text="Help Services"
+                    android:textColor="#FFFFFF" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/help_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:background="@color/colorPrimary">
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/helpServicesSubTitle"
+                    android:layout_marginBottom="5dp"/>
 
-                    <TextView
-                        android:id="@+id/overviewTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Overview"
-                        android:textColor="#FFFFFF"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:paddingStart="10dp"
-                        android:paddingTop="10dp"/>
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/helpServicesSubTitle"
-                        android:layout_below="@id/overviewTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Help Services"
-                        android:textColor="#FFFFFF"
-                        android:paddingStart="10dp"/>
+        </androidx.cardview.widget.CardView>
 
-                </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
 
-            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="#FFFFFF">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                <TextView
+                    android:id="@+id/servicePerformanceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Service Performance"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <RelativeLayout
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/service_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:background="#FFFFFF">
+                    android:layout_height="200dp"
+                    android:layout_below="@id/servicePerformanceTitle"
+                    android:layout_marginRight="50dp"/>
 
-                    <TextView
-                        android:id="@+id/servicePerformanceTitle"
-                        android:layout_width="wrap_content"
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/userApprovals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground">
+
+                <TextView
+                    android:id="@+id/userApprovalsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/user_approvals_title"
+                    android:textColor="#666666"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/darker_gray"
+                    android:onClick="onPressViewApprovals"
+                    android:text="View All" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Service Performance"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:paddingStart="10dp"
-                        android:paddingTop="10dp"/>
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/service_chart"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_below="@id/servicePerformanceTitle"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
-
-    </LinearLayout>
+                        android:layout_below="@id/userApprovalsTitle"
+                        android:alignmentMode="alignMargins"
+                        android:columnCount="1"
+                        android:rowCount="3"
+                        android:columnOrderPreserved="false"
+                        android:layout_marginTop="30dp">
 
 
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="6dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
 
+                            <RelativeLayout
+                                android:id="@+id/user1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff">
+
+                                <ImageView
+                                    android:id="@+id/userPic1"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:clickable="false"
+                                    android:padding="5dp"
+                                    android:src="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/userName1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/userPic1"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="John Doe"
+                                    android:textColor="#000000"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/userProf1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/userName1"
+                                    android:layout_toRightOf="@id/userPic1"
+                                    android:paddingStart="10dp"
+                                    android:text="Electrician"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:onClick="onPressViewSingleApproval"
+                                    android:text="View" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="6dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
+
+                            <RelativeLayout
+                                android:id="@+id/user2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff">
+
+                                <ImageView
+                                    android:id="@+id/userPic2"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:padding="5dp"
+                                    android:src="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/userName2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/userPic2"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="John Doe"
+                                    android:textColor="#000000"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/userProf2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/userName2"
+                                    android:layout_toRightOf="@id/userPic2"
+                                    android:paddingStart="10dp"
+                                    android:text="Electrician"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:text="View" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="6dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
+
+                            <RelativeLayout
+                                android:id="@+id/user4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff">
+
+                                <ImageView
+                                    android:id="@+id/userPic4"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:padding="5dp"
+                                    android:src="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/userName4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/userPic4"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="John Doe"
+                                    android:textColor="#000000"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/userProf4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/userName4"
+                                    android:layout_toRightOf="@id/userPic4"
+                                    android:paddingStart="10dp"
+                                    android:text="Electrician"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+                                    android:text="View" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
 
 </RelativeLayout>

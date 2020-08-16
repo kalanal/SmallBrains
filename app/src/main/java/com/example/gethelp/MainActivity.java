@@ -9,21 +9,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
-    float values[] = {6f,1f,3f};
-    String titles[] = {"Technician","Carpenter","Plumber"};
+    AdminHome adminHome = new AdminHome();
+    ServiceTypes serviceTypes = new ServiceTypes();
+    UserApprovals userApprovals = new UserApprovals();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +39,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AdminHome()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, adminHome).commit();
             setTitle(R.string.admin_home_title);
             navigationView.setCheckedItem(R.id.nav_admin_home);
-//            setupPieChart();
         }
 
     }
@@ -54,20 +50,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_admin_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AdminHome()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, adminHome).addToBackStack(null).commit();
                 setTitle(R.string.admin_home_title);
-//                setupPieChart();
                 break;
             case R.id.nav_service_types:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ServiceTypes()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, serviceTypes).addToBackStack(null).commit();
                 setTitle(R.string.service_types_title);
                 break;
             case R.id.nav_user_approvals:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserApprovals()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userApprovals).addToBackStack(null).commit();
                 setTitle(R.string.user_approvals_title);
                 break;
         }
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -81,19 +75,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void setupPieChart() {
-        //Populating a list of pie entries
-        List<PieEntry> pieEntries = new ArrayList<>();
-        for(int i=0; i< values.length; i++){
-            pieEntries.add(new PieEntry(values[i],titles[i]));
-        }
-
-        PieDataSet dataSet = new PieDataSet(pieEntries,"Service Performance");
-        PieData data = new PieData(dataSet);
-
-        // Get the chart
-        PieChart chart = (PieChart)findViewById(R.id.service_chart);
-        chart.setData(data);
+    public void onPressViewApprovals(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userApprovals).addToBackStack(null).commit();
+        setTitle(R.string.user_approvals_title);
     }
 
+    public void onPressViewSingleApproval(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ApproveUser()).addToBackStack(null).commit();
+        setTitle(R.string.approve_user_title);
+    }
+
+    public void onPressDropdown(View view){
+        serviceTypes.onPressDropdown(view);
+    }
 }
