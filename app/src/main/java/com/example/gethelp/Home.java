@@ -70,4 +70,8 @@ public class Home extends Fragment {
 //        startActivity(new Intent(getApplicationContext(),Login.class));
 //        finish();
 //    }
+  
+    public void profile(View view) {
+        startActivity(new Intent(getApplicationContext(),EditUser1.class));
+    }
 }
