@@ -8,6 +8,8 @@
     <string name="service_types_title">Service Types</string>
     <string name="user_approvals_title">User Approvals</string>
     <string name="approve_user_title">Approve User</string>
+    <string name="consumer_home_title">Consumer Home</string>
+    <string name="user_profile_title">User Profile</string>
   
     <!--Placeholders-->
     <string name="about_placeholder">About</string>
