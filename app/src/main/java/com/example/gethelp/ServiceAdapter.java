@@ -8,14 +8,15 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 public class ServiceAdapter extends FirestoreRecyclerAdapter<ServiceItem, ServiceAdapter.ServiceHolder> {
 
@@ -25,6 +26,13 @@ public class ServiceAdapter extends FirestoreRecyclerAdapter<ServiceItem, Servic
 
     @Override
     protected void onBindViewHolder(@NonNull final ServiceHolder serviceHolder, int i, @NonNull final ServiceItem serviceItem) {
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("profile.jpg");
+        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(serviceHolder.professionalImage);
+            }
+        });
         serviceHolder.professionalName.setText(serviceItem.getName());
         serviceHolder.professionalCat.setText(serviceItem.getCategory());
         serviceHolder.professionalAbout.setText(serviceItem.getAbout());

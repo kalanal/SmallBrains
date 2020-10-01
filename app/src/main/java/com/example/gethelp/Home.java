@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.Query;
 
 import android.content.Intent;
@@ -65,13 +67,13 @@ public class Home extends Fragment {
         adapter.stopListening();
     }
 
-    //    public void logout(View view) {
-//        FirebaseAuth.getInstance().signOut();
-//        startActivity(new Intent(getApplicationContext(),Login.class));
-//        finish();
-//    }
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent redirect = new Intent(getActivity(),Login.class);
+        getActivity().startActivity(redirect);
+    }
   
     public void profile(View view) {
-        startActivity(new Intent(getApplicationContext(),EditUser1.class));
+//        startActivity(new Intent(getApplicationContext(),EditUser1.class));
     }
 }

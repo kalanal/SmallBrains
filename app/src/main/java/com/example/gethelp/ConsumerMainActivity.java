@@ -25,18 +25,18 @@ public class ConsumerMainActivity extends AppCompatActivity{
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, consumer_home).commit();
-            setTitle(R.string.admin_home_title);
+            setTitle(R.string.consumer_home_title);
         }
 
     }
 
     public void onClickHome(View view){
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, consumer_home).addToBackStack(null).commit();
-        setTitle("Consumer Home");
+        setTitle(R.string.consumer_home_title);
     }
     public void onClickUser(View view){
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, editUser1).addToBackStack(null).commit();
-        setTitle("User Profile");
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, editUser1).addToBackStack(null).commit();
+        setTitle(R.string.user_profile_title);
     }
 
 }
