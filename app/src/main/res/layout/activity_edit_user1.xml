@@ -110,8 +110,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.815" />
 
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:onClick="logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/profileImg"
         android:layout_width="103dp"
         android:layout_height="91dp"
         android:contentDescription="TODO"
@@ -254,5 +267,17 @@
             android:layout_marginLeft="15dp"
             android:text="10 Posts" />
     </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/chngPicBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135"
+        app:srcCompat="@drawable/ic_add_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

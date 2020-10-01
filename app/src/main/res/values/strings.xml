@@ -14,18 +14,16 @@
     <!--Placeholders-->
     <string name="about_placeholder">About</string>
     <string name="exp_placeholder">Professional Experience</string>
-    
+
     <!--ServiceTypes-->
     <string-array name="Technician">
         <item>IT Technician</item>
         <item>Some Other Technician</item>
         <item>Some Other Technician</item>
     </string-array>
-    <string-array name="Carpenter">
-    </string-array>
-    <string-array name="Electrician">
-    </string-array>
-  
+    <string-array name="Carpenter"></string-array>
+    <string-array name="Electrician"></string-array>
+
     <!--Sudaraka -->
     <string name="see_more_btn1">See More</string>
     <string name="accept_btn">Accept</string>
@@ -44,7 +42,7 @@
     <string name="service_request">Service Request</string>
     <string name="customer_request">Customer Request</string>
     <string name="performance_report">Performance Report</string>
-  
+
     <!--Kalana-->
     <string name="SignUpTitle">Signup for GetHelp!</string>
     <string name="existing_user">Already have an account?</string>

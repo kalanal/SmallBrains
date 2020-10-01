@@ -62,10 +62,9 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/consumer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="false"
         android:text="@string/user_type2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,10 +74,9 @@
         app:layout_constraintVertical_bias="0.62" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/professional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
         android:text="@string/user_type1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +146,7 @@
         android:text="@string/home_town_field1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48" />
@@ -175,10 +173,10 @@
         android:textColor="#8F8F8F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.453" />
 
     <EditText
         android:id="@+id/pswrd"
