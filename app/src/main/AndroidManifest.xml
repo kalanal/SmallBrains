@@ -20,11 +20,11 @@
 <!--            </intent-filter>-->
         </activity>
         <activity android:name=".Login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".ProfessionalReg">
 <!--            <intent-filter>-->
@@ -40,7 +40,7 @@
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
-        </activity>      
+       </activity>
       
         <!-- Sudaraka's Activities-->
         <activity android:name=".ProfessionalProfile"
@@ -118,15 +118,22 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
+        <activity android:name=".ConsumerMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 	<!--Sampath's Activities-->
-        <activity android:name=".Home">
+<!--        <activity android:name=".Home">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
-        </activity>
+<!--        </activity>-->
         <activity android:name=".BookProfessional">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->

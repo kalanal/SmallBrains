@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_user"
+                android:src="@drawable/ic_person"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/userPic"
                 android:layout_marginTop="20dp"
