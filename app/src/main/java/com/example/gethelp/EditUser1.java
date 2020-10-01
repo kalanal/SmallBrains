@@ -123,4 +123,11 @@ public class EditUser1 extends AppCompatActivity {
         });
 
     }
+
+    public void onSignOut(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        finish();
+    }
+
 }

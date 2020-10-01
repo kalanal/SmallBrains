@@ -30,10 +30,11 @@
             android:id="@+id/consumer_settings_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:background="@drawable/ic_settings"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_settings"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="onSignOut" />
 
         <Button
             android:id="@+id/consumer_user_btn"

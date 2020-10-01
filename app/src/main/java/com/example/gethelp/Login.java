@@ -43,11 +43,6 @@ public class Login extends AppCompatActivity {
         forgotpwdLink = findViewById(R.id.forgotpwd);
         fAuth = FirebaseAuth.getInstance();
 
-        if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),ConsumerMainActivity.class));
-            finish();
-        }
-
         Loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +116,15 @@ public class Login extends AppCompatActivity {
                 passwordRestDialog.create().show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),ConsumerMainActivity.class));
+            finish();
+        }
     }
 }
 

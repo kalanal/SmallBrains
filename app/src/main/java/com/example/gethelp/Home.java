@@ -66,14 +66,4 @@ public class Home extends Fragment {
         super.onStop();
         adapter.stopListening();
     }
-
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        Intent redirect = new Intent(getActivity(),Login.class);
-        getActivity().startActivity(redirect);
-    }
-  
-    public void profile(View view) {
-//        startActivity(new Intent(getApplicationContext(),EditUser1.class));
-    }
 }
