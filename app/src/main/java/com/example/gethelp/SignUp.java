@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,15 +14,25 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
+    private static final String TAG = "ABC";
     EditText Email,UserName,Age,Phone,Town,Password;
     Button SignUpbtn,Loginbtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
+    FirebaseFirestore fStore;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,8 @@ public class SignUp extends AppCompatActivity {
         Loginbtn = findViewById(R.id.login2);
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),Home.class));
@@ -47,9 +60,12 @@ public class SignUp extends AppCompatActivity {
         SignUpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = Email.getText().toString().trim();
-//                String phone = Phone.get
+                final String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
+                final String username = UserName.getText().toString().trim();
+                final String phone = Phone.getText().toString().trim();
+                final String town = Town.getText().toString().trim();
+                final String age = Age.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     Email.setError("Email is required");
@@ -71,10 +87,29 @@ public class SignUp extends AppCompatActivity {
 
                         if(task.isSuccessful()){
                             Toast.makeText(SignUp.this,"User Created." , Toast.LENGTH_SHORT).show();
+                            userId = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userId);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("email", email);
+                            user.put("uname" , username);
+                            user.put("age" , age);
+                            user.put("phone" , phone);
+                            user.put("town" , town);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess: User profile is created for "+ userId);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "onFailure: "+ e.toString());
+                                }
+                            });
                             startActivity(new Intent(getApplicationContext(),Home.class));
-                        }
-                        else{
+                        } else{
                             Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
