@@ -21,9 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfessionalReg"/>
+        <activity android:name=".UserProfile"/>
         <activity android:name=".ProfessionalDetails"/>
-        <activity android:name=".EditUser1"/>
+        <activity android:name=".EditUser"/>
       
         <!-- Sudaraka's Activities -->
         <activity

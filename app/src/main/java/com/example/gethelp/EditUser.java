@@ -3,6 +3,7 @@ package com.example.gethelp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -10,8 +11,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,41 +21,47 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class EditUser1 extends AppCompatActivity {
-    TextView email,uname,age,phone,town;
+public class EditUser extends Fragment{
+    View view;
+    EditText email,uname,age,phone,town;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     ImageView profilePic;
     ImageButton changeProPic;
     StorageReference storageReference;
+    ListenerRegistration registration;
 
-    @SuppressLint("WrongViewCast")
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_user1);
-        email = findViewById(R.id.emailTxt1);
-        uname = findViewById(R.id.usernameTxt1);
-        age = findViewById(R.id.ageTxt1);
-        phone = findViewById(R.id.phoneTxt1);
-        town = findViewById(R.id.townTxt1);
-        profilePic = findViewById(R.id.profileImg);
-        changeProPic = findViewById(R.id.chngPicBtn);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.activity_edit_user,container,false);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        email = (EditText) view.findViewById(R.id.emailTxt1);
+        uname = (EditText) view.findViewById(R.id.usernameTxt1);
+        age = (EditText) view.findViewById(R.id.ageTxt1);
+        phone = (EditText) view.findViewById(R.id.phoneTxt1);
+        town = (EditText) view.findViewById(R.id.townTxt1);
+        profilePic = (ImageView) view.findViewById(R.id.profileImg);
+        changeProPic = (ImageButton) view.findViewById(R.id.chngPicBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -70,7 +78,9 @@ public class EditUser1 extends AppCompatActivity {
         userId = fAuth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+
+        registration = documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>(){
+//        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 email.setText(value.getString("email"));
@@ -88,22 +98,27 @@ public class EditUser1 extends AppCompatActivity {
                 startActivityForResult(opengallery, 1000);
             }
         });
+
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onStop() {
+        super.onStop();
+        registration.remove();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1000){
             if(resultCode == Activity.RESULT_OK){
                 Uri imageUri = data.getData();
-//                profilePic.setImageURI(imageUri);
                 uploadImageToFirebase(imageUri);
             }
         }
     }
 
     private void uploadImageToFirebase(Uri imageUri) {
-
          final StorageReference fileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"profile.jpg");
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -118,16 +133,16 @@ public class EditUser1 extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(EditUser1.this,"Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Failed",Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    public void onSignOut(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
+//    public void onSignOut(View view) {
+//        FirebaseAuth.getInstance().signOut();
+//        startActivity(new Intent(getApplicationContext(),Login.class));
+//        finish();
+//    }
 
 }
