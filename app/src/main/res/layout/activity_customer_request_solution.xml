@@ -56,7 +56,7 @@
                     android:textColor="#FFFFFF"
                     android:layout_toEndOf="@+id/overviewTitle"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                     android:textColor="#FFFFFF"
                     android:layout_toEndOf="@+id/email"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/phone"
@@ -186,6 +186,74 @@
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
             app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="#D5C4D8">
+
+                <TextView
+                    android:id="@+id/solution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem Title:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/solution_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/solution"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingBottom="10dp"
+                    android:backgroundTint="@color/graylight"
+                    android:ems="10"
+                    android:inputType="textMultiLine"/>
+
+                <TextView
+                    android:id="@+id/solution_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/solution_fetch"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/solution_description_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/solution_description"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Description of problem"
+                    android:backgroundTint="@color/graylight"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
             app:cardElevation="0dp">
 
             <RelativeLayout
@@ -204,7 +272,7 @@
                     android:layout_marginBottom="8dp"
                     android:background="@android:color/darker_gray"
                     android:backgroundTint="#03A9F4"
-                    android:text="Respond" />
+                    android:text="Submit" />
 
             </RelativeLayout>
 
