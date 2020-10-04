@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorBackground">
+    android:background="@drawable/ic_wave">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -16,30 +16,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userPicCard"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_person"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="60dp"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/userPic"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/pro_pic_back"/>
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/userPic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person"
+                    android:background="@color/colorBackground"/>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="John Doe"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textColor="#000000"
-                android:layout_below="@id/userPic"/>
+                android:layout_below="@id/userPicCard"/>
 
             <TextView
-                android:id="@+id/userProffesion"
+                android:id="@+id/userCat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Electrician"
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 android:textSize="15sp"
@@ -48,103 +56,23 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="156dp"
-                android:id="@+id/userDescription"
-                android:layout_below="@+id/userProffesion"
-                android:layout_margin="20dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/userCat"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/no_border_back">
 
             <TextView
+                android:id="@+id/userDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/about_placeholder"
                 android:textSize="20sp" />
 
             </ScrollView>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:id="@+id/userExperience"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_below="@id/userDescription"
-                android:background="@drawable/no_border_back">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/exp_placeholder"
-                android:textSize="20sp"/>
-
-            </ScrollView>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_below="@id/userExperience"
-                android:alignmentMode="alignMargins"
-                android:columnCount="3"
-                android:rowCount="1"
-                android:columnOrderPreserved="false">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    android:id="@+id/pic1">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_demo_pic"
-                        android:layout_centerHorizontal="true"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    android:id="@+id/pic2">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_demo_pic"
-                        android:layout_centerHorizontal="true" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    android:id="@+id/pic3">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_demo_pic"
-                        android:layout_centerHorizontal="true" />
-
-                </androidx.cardview.widget.CardView>
-
-            </GridLayout>
-
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/rejectBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -156,7 +84,7 @@
                 android:onClick="onPressViewApprovals"
                 android:text="Reject" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/approveBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"

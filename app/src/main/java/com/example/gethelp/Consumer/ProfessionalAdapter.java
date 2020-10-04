@@ -26,19 +26,19 @@ public class ProfessionalAdapter extends FirestoreRecyclerAdapter<ProfessionalIt
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final ProfessionalHolder serviceHolder, int i, @NonNull final ProfessionalItem professionalItem) {
+    protected void onBindViewHolder(@NonNull final ProfessionalHolder professionalHolder, int i, @NonNull final ProfessionalItem professionalItem) {
         StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("users/"+ getSnapshots().getSnapshot(i).getId() +"profile.jpg");
         storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(serviceHolder.professionalImage);
+                Picasso.get().load(uri).into(professionalHolder.professionalImage);
             }
         });
-        serviceHolder.professionalId.setText(getSnapshots().getSnapshot(i).getId());
-        serviceHolder.professionalName.setText(professionalItem.getName());
-        serviceHolder.professionalCat.setText(professionalItem.getCategory());
-        serviceHolder.professionalAbout.setText(professionalItem.getAbout());
-        serviceHolder.professionalRating.setRating(professionalItem.getRating());
+        professionalHolder.professionalId.setText(getSnapshots().getSnapshot(i).getId());
+        professionalHolder.professionalName.setText(professionalItem.getName());
+        professionalHolder.professionalCat.setText(professionalItem.getCategory());
+        professionalHolder.professionalAbout.setText(professionalItem.getAbout());
+        professionalHolder.professionalRating.setRating(professionalItem.getRating());
     }
 
     @NonNull

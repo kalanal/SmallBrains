@@ -10,8 +10,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gethelp.R;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -24,6 +27,9 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 
@@ -32,12 +38,16 @@ public class AdminHome extends Fragment {
     public static final int[] SLICE_COLOURS = {
             Color.parseColor("#ab4ded"), Color.parseColor("#7806e3"), Color.parseColor("#844dea")
     };
-    View v;
+    View view;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference collectionRef = db.collection("professionalPending");
+    private UserApprovalAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.admin_home,container,false);
-        return v;
+        view = inflater.inflate(R.layout.admin_home,container,false);
+        return view;
     }
 
     @Override
@@ -45,10 +55,23 @@ public class AdminHome extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupPieChart();
         setupLineChart();
+        setupRecyclerView();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     public void setupPieChart() {
-        PieChart chart = (PieChart)v.findViewById(R.id.service_chart);
+        PieChart chart = (PieChart) view.findViewById(R.id.service_chart);
         int values[] = {6,1,3};
         String titles[] = {"Technician","Carpenter","Plumber"};
         //Populating a list of pie entries
@@ -76,7 +99,7 @@ public class AdminHome extends Fragment {
 
     public void setupLineChart(){
         final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-        LineChart mChart = (LineChart) v.findViewById(R.id.help_chart);
+        LineChart mChart = (LineChart) view.findViewById(R.id.help_chart);
         mChart.setTouchEnabled(true);
         mChart.setPinchZoom(true);
         mChart.getLegend().setEnabled(false);
@@ -133,5 +156,21 @@ public class AdminHome extends Fragment {
             mChart.setData(data);
         }
     }
+
+    private void setupRecyclerView() {
+        Query query = collectionRef.limit(3);
+
+        FirestoreRecyclerOptions<UserApprovalItem> options = new FirestoreRecyclerOptions.Builder<UserApprovalItem>()
+                .setQuery(query,UserApprovalItem.class)
+                .build();
+
+        adapter = new UserApprovalAdapter(options);
+
+        RecyclerView recyclerView = view.findViewById(R.id.approval_recycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(adapter);
+    }
+
 
 }
