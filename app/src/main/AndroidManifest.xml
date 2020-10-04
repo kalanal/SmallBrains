@@ -11,117 +11,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomerRequestSolution">
-<!--            <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
 
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
-        </activity>
         <!-- Kalana's Activities -->
-        <activity android:name=".SignUp" />
+        <activity android:name=".SignUp"/>
         <activity android:name=".Login">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
-        <activity android:name=".ProfessionalReg" />
-        <activity android:name=".ProfessionalDetails" />
-        <activity android:name=".EditUser1" >
-<!--                         <intent-filter>-->
-<!--                         <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--                         <category android:name="android.intent.category.LAUNCHER" />-->
-<!--                         </intent-filter>-->
-        </activity>
+        <activity android:name=".ProfessionalDetails"/>
+      
         <!-- Sudaraka's Activities -->
-        <activity android:name=".ProfessionalProfile">
-
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
-        </activity>
+        <activity
+            android:name=".ProfessionalProfile">
+       </activity>
+        <activity
+            android:name=".ProblemListPage">
+       </activity>
+        <activity
+            android:name=".CustomerRequestSolution">
+       </activity>
         <activity
             android:name=".ServiceRequest"
-            android:label="@string/service_request">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            android:label="@string/service_request"/>
         </activity>
         <activity
             android:name=".CustomerRequest"
-            android:label="@string/customer_request">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            android:label="@string/customer_request"/>
         </activity>
         <activity
             android:name=".ServiceRequestList"
-            android:label="@string/service_request_list">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:label="@string/service_request_list"/>
         <activity
             android:name=".PerformanceReport"
-            android:label="@string/performance_report">
+            android:label="@string/performance_report"/>
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-<!--        <activity-->
-<!--            android:name=".CustomerRequestList"-->
-<!--            android:label="@string/customer_request_list">-->
-
-<!--            &lt;!&ndash; <intent-filter> &ndash;&gt;-->
-<!--            &lt;!&ndash; <action android:name="android.intent.action.MAIN" /> &ndash;&gt;-->
-
-
-<!--            &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" /> &ndash;&gt;-->
-<!--            &lt;!&ndash; </intent-filter> &ndash;&gt;-->
-<!--        </activity>-->
         <!-- Ryans Activities -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Admin.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity android:name=".ConsumerMainActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity android:name=".BookProfessional" />
-        <activity android:name=".ProblemListPage" >
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
@@ -129,8 +60,9 @@
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
         </activity>
-        <activity android:name=".ProfessionalAd" />
-
+        <activity android:name=".Consumer.ConsumerMainActivity"/>
+        <activity android:name=".Consumer.BookProfessional"/>
+        <activity android:name=".Consumer.ProfessionalAd"/>
     </application>
 
 </manifest>
