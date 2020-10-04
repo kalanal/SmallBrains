@@ -37,7 +37,7 @@
                     android:paddingTop="10dp"/>
 
                 <TextView
-                    android:id="@+id/overviewTitle"
+                    android:id="@+id/pro_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
@@ -54,14 +54,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/customer_name_fetch"
                     android:textColor="#FFFFFF"
-                    android:layout_toEndOf="@+id/overviewTitle"
+                    android:layout_toEndOf="@+id/pro_name"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/overviewTitle"
+                    android:layout_below="@+id/pro_name"
                     android:paddingStart="10dp"
                     android:paddingTop="10dp"
                     android:text="Email: "
@@ -76,7 +76,7 @@
                     android:paddingTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/overviewTitle"
+                    android:layout_below="@+id/pro_name"
                     android:textColor="#FFFFFF"
                     android:layout_toEndOf="@+id/email"
                     android:textSize="18sp"

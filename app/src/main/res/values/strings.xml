@@ -26,6 +26,7 @@
 
     <!--Sudaraka -->
     <string name="see_more_btn1">See More</string>
+    <string name="goback_btn">Go Back</string>
     <string name="accept_btn">Accept</string>
     <string name="decline_btn">Decline</string>
     <string name="respond_btn">Respond</string>

@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ProblemListPage extends AppCompatActivity{
 
     CustomerRequestList list = new CustomerRequestList();
-    EditUser1 editUser1 = new EditUser1();
+    ProfessionalProfile editUser1 = new ProfessionalProfile();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class ProblemListPage extends AppCompatActivity{
     }
     public void onClickUser(View view){
         setTitle(R.string.user_profile_title);
-        startActivity(new Intent(getApplicationContext(),EditUser1.class));
+        startActivity(new Intent(getApplicationContext(),ProfessionalProfile.class));
         finish();
     }
     public void onSignOut(View view) {

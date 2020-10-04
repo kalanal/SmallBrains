@@ -1,7 +1,13 @@
 package com.example.gethelp;
 
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 public class CustomerProblem {
-        private String id;
+
+
+
         private String title;
         private String description;
 
@@ -14,10 +20,6 @@ public class CustomerProblem {
             //Empty constructor needed
         }
 
-        public String getId() {
-            return id;
-        }
-
         public String getTitle() {
             return title;
         }
@@ -25,5 +27,6 @@ public class CustomerProblem {
         public String getDescription() {
             return description;
         }
+
 }
 
