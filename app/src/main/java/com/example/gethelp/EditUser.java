@@ -45,7 +45,6 @@ public class EditUser extends Fragment{
     ImageButton changeProPic;
     Button editUser;
     StorageReference storageReference;
-    ListenerRegistration registration;
 
     @Nullable
     @Override
@@ -108,12 +107,6 @@ public class EditUser extends Fragment{
                 startActivity(i);
             }
         });
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        registration.remove();
     }
 
     @Override
