@@ -1,40 +1,18 @@
 package com.example.gethelp;
 
 public class ServiceItem {
-    private String id;
-    private String name;
-    private String category;
-    private String about;
-    private float rating;
 
-    public ServiceItem(String name, String category, String about, float rating) {
-        this.name = name;
-        this.category = category;
-        this.about = about;
-        this.rating = rating;
-    }
+    private String title;
 
     public ServiceItem() {
-        //Empty constructor needed
+        //empty constructor needed
     }
 
-    public String getId() {
-        return id;
+    public ServiceItem(String title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public float getRating() {
-        return rating;
+    public String getTitle() {
+        return title;
     }
 }

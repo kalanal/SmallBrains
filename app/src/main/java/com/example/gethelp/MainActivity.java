@@ -82,8 +82,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ApproveUser()).addToBackStack(null).commit();
         setTitle(R.string.approve_user_title);
     }
-
-    public void onPressDropdown(View view){
-        serviceTypes.onPressDropdown(view);
-    }
 }
