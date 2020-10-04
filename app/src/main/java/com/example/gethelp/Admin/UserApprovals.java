@@ -21,7 +21,7 @@ public class UserApprovals extends Fragment {
 
     View view;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionRef = db.collection("professionals");
+    private CollectionReference collectionRef = db.collection("professionalPending");
     private UserApprovalAdapter adapter;
 
     @Nullable

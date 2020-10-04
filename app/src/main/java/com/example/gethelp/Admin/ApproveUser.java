@@ -65,7 +65,7 @@ public class ApproveUser extends Fragment implements View.OnClickListener{
         approveBtn.setOnClickListener(this);
         rejectBtn.setOnClickListener(this);
 
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("professionals").document(id);
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("professionalPending").document(id);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
