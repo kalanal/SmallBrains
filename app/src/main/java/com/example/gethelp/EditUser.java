@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -36,12 +37,13 @@ import com.squareup.picasso.Picasso;
 
 public class EditUser extends Fragment{
     View view;
-    EditText email,uname,age,phone,town;
+    TextView email,uname,age,phone,town;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     ImageView profilePic;
     ImageButton changeProPic;
+    Button editUser;
     StorageReference storageReference;
     ListenerRegistration registration;
 
@@ -55,12 +57,13 @@ public class EditUser extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        email = (EditText) view.findViewById(R.id.emailTxt1);
-        uname = (EditText) view.findViewById(R.id.usernameTxt1);
-        age = (EditText) view.findViewById(R.id.ageTxt1);
-        phone = (EditText) view.findViewById(R.id.phoneTxt1);
-        town = (EditText) view.findViewById(R.id.townTxt1);
+        email = (TextView) view.findViewById(R.id.emailTxt1);
+        uname = (TextView) view.findViewById(R.id.nameId);
+        age = (TextView) view.findViewById(R.id.ageTxt1);
+        phone = (TextView) view.findViewById(R.id.phoneTxt1);
+        town = (TextView) view.findViewById(R.id.townTxt1);
         profilePic = (ImageView) view.findViewById(R.id.profileImg);
+        editUser = (Button) view.findViewById(R.id.editUserBtn);
         changeProPic = (ImageButton) view.findViewById(R.id.chngPicBtn);
 
         fAuth = FirebaseAuth.getInstance();
@@ -79,8 +82,7 @@ public class EditUser extends Fragment{
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
 
-        registration = documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>(){
-//        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 email.setText(value.getString("email"));
@@ -99,6 +101,13 @@ public class EditUser extends Fragment{
             }
         });
 
+        editUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(),EditUser.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

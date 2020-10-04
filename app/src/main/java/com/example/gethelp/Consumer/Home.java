@@ -2,6 +2,7 @@ package com.example.gethelp.Consumer;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Home extends Fragment {
 
     View view;
+    CoordinatorLayout coordinatorLayout;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference professionalRef = db.collection("professionals");
     private ProfessionalAdapter adapter;
@@ -30,6 +32,7 @@ public class Home extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.home,container,false);
         return view;
+
     }
 
     @Override
