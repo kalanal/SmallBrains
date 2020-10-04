@@ -6,10 +6,10 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/newServiceId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/newServiceId"
         android:layout_margin="20dp"
-        android:hint="Serivce Name"/>
+        android:hint="Service Name"/>
 
 </RelativeLayout>

@@ -1,11 +1,12 @@
 package com.example.gethelp;
 
-import android.net.Uri;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,30 +14,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
 public class ServiceAdapter extends FirestoreRecyclerAdapter<ServiceItem, ServiceAdapter.ServiceHolder> {
+
+    int selectedPos = 0;
+    String id;
 
     public ServiceAdapter(@NonNull FirestoreRecyclerOptions<ServiceItem> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final ServiceHolder serviceHolder, int i, @NonNull final ServiceItem serviceItem) {
-        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("profile.jpg");
-        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(serviceHolder.professionalImage);
-            }
-        });
-        serviceHolder.professionalName.setText(serviceItem.getName());
-        serviceHolder.professionalCat.setText(serviceItem.getCategory());
-        serviceHolder.professionalAbout.setText(serviceItem.getAbout());
-        serviceHolder.professionalRating.setRating(serviceItem.getRating());
+    protected void onBindViewHolder(@NonNull ServiceHolder serviceHolder, int i, @NonNull ServiceItem serviceItem) {
+        serviceHolder.textViewTitle.setText(serviceItem.getTitle());
+        serviceHolder.textViewTitle.setTextColor(selectedPos == i ? Color.WHITE : Color.GRAY);
+        serviceHolder.textViewId.setText(getSnapshots().getSnapshot(i).getId());
+        serviceHolder.itemView.setSelected(selectedPos == i);
+        Drawable backgroundOff = serviceHolder.itemView.getBackground(); //v is a view
+        backgroundOff.setTint(selectedPos == i ? Color.parseColor("#ab4ded") : Color.WHITE); //defaultColor is an int
+        serviceHolder.itemView.setBackground(backgroundOff);
+        id = getSnapshots().getSnapshot(selectedPos).getId();
     }
 
     @NonNull
@@ -46,19 +43,29 @@ public class ServiceAdapter extends FirestoreRecyclerAdapter<ServiceItem, Servic
         return new ServiceHolder(v);
     }
 
-    class ServiceHolder extends RecyclerView.ViewHolder {
-        ImageView professionalImage;
-        TextView professionalName;
-        TextView professionalCat;
-        TextView professionalAbout;
-        RatingBar professionalRating;
-        public ServiceHolder(@NonNull View itemView) {
+    class ServiceHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        TextView textViewTitle;
+        TextView textViewId;
+
+        public ServiceHolder(View itemView) {
             super(itemView);
-            professionalImage = itemView.findViewById(R.id.user_pro_image);
-            professionalName = itemView.findViewById(R.id.service_title);
-            professionalCat = itemView.findViewById(R.id.service_category);
-            professionalAbout = itemView.findViewById(R.id.service_description);
-            professionalRating = itemView.findViewById(R.id.service_rating);
+            textViewTitle = itemView.findViewById(R.id.service_item_value);
+            textViewId = itemView.findViewById(R.id.service_item_id);
+            itemView.setOnClickListener(this);
         }
+
+
+        @Override
+        public void onClick(View view) {
+            if(getAdapterPosition() == RecyclerView.NO_POSITION) return;
+
+            notifyItemChanged(selectedPos);
+            selectedPos = getAdapterPosition();
+            notifyItemChanged(selectedPos);
+        }
+    }
+
+    public String getId() {
+        return id;
     }
 }

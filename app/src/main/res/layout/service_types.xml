@@ -1,206 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorBackground"
-    android:gravity="center">
+    tools:context=".ServiceTypes">
 
-    <GridLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/service_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alignmentMode="alignMargins"
-        android:columnCount="1"
-        android:columnOrderPreserved="false">
+        android:layout_height="match_parent"/>
 
-        <RelativeLayout
-            android:id="@+id/typeCard1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/parentCard1"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="Technician"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/serviceArrow1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:onClick="onPressDropdown"
-                    android:src="@drawable/ic_arrow_up" />
-
-            </androidx.cardview.widget.CardView>
-
-            <FrameLayout
-                android:id="@+id/childCard1"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/parentCard1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border_back"
-                android:elevation="9dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="IT Technician"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/childCard2"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/childCard1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border_back"
-                android:elevation="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="Some Other Technician"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/childCard3"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/childCard2"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border_back"
-                android:elevation="7dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="Some Other Technician"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-            </FrameLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/typeCard2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                app:cardCornerRadius="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="Carpenter"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/serviceArrow2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:onClick="onPressDropdown"
-                    android:src="@drawable/ic_arrow_down" />
-
-            </androidx.cardview.widget.CardView>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/typeCard3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                app:cardCornerRadius="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="20dp"
-                    android:text="Electrician"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-        </RelativeLayout>
-
-
-    </GridLayout>
-
-    <ImageView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newServiceBtn"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:clickable="true"
-        android:src="@drawable/ic_add_item" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_item"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"/>
 
-    <ImageView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/editServiceBtn"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_toStartOf="@id/newServiceBtn"
-        android:clickable="true"
-        android:src="@drawable/ic_edit_item" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit_item"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_toStartOf="@id/newServiceBtn"/>
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.Query;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +21,8 @@ public class Home extends Fragment {
 
     View view;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference serviceItemRef = db.collection("professionals");
-    private ServiceAdapter adapter;
+    private CollectionReference professionalRef = db.collection("professionals");
+    private ProfessionalAdapter adapter;
 
     @Nullable
     @Override
@@ -41,15 +39,15 @@ public class Home extends Fragment {
 
 
     private void setUpRecyclerView() {
-        Query query = serviceItemRef.limit(100);
+        Query query = professionalRef.limit(100);
 
-        FirestoreRecyclerOptions<ServiceItem> options = new FirestoreRecyclerOptions.Builder<ServiceItem>()
-                .setQuery(query, ServiceItem.class)
+        FirestoreRecyclerOptions<ProfessionalItem> options = new FirestoreRecyclerOptions.Builder<ProfessionalItem>()
+                .setQuery(query, ProfessionalItem.class)
                 .build();
 
-        adapter = new ServiceAdapter(options);
+        adapter = new ProfessionalAdapter(options);
 
-        RecyclerView recyclerView = view.findViewById(R.id.service_recycler);
+        RecyclerView recyclerView = view.findViewById(R.id.professional_recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(),2));
         recyclerView.setAdapter(adapter);
