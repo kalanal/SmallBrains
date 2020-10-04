@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gethelp.R;
 import com.google.firebase.firestore.Query;
 
 import android.os.Bundle;

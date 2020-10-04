@@ -1,8 +1,10 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.gethelp.R;
 
 public class ProfessionalAd extends AppCompatActivity {
 
