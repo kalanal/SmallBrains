@@ -89,6 +89,7 @@ public class Login extends AppCompatActivity {
                 passwordRestDialog.setMessage("Enter your email to receive the link to reset the password");
                 passwordRestDialog.setView(restPwd);
 
+
                 passwordRestDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

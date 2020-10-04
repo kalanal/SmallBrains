@@ -106,24 +106,6 @@ public class SignUp extends AppCompatActivity {
                             }
                             if(Professional.isChecked()){
                                 user.put("type",professional);
-//                                AlertDialog.Builder enterProDetails = new AlertDialog.Builder(SignUp.this);
-//                                enterProDetails.setTitle("Alert!");
-//                                enterProDetails.setMessage("Do you wish to exit?");
-//                                enterProDetails.setCancelable(true);
-
-//                                enterProDetails.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialogInterface, int i) {
-//                                        finish();
-//                                    }
-//                                });
-//
-//                                enterProDetails.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                                    }
-//                                });
                             }
                             user.put("email", email);
                             user.put("uname" , username);
