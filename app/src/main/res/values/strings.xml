@@ -65,6 +65,11 @@
     <string name="forgot_pwd_link">Forgot password?</string>
     <string name="new_user">Need an account?</string>
     <string name="pswd1">Password</string>
+    <string name="logout">Logout</string>
+    <string name="pro_det">We just require a few more details to sign you up as a Professional</string>
+    <string name="pro_about">About</string>
+    <string name="category">Category</string>
+    <string name="name">Name</string>
 
     <!--Sampath -->
     <string name="text1">John Moris</string>
@@ -83,10 +88,6 @@
     <string name="text15">Fitness professionals screen participants for exercise programs, evaluate various fitness components, prescribe exercise to improve these components, and may also help clients with specific or chronic conditions.[1] Fitness professionals help challenge an individual by increasing their performance, as compared to when a person would work out on their own. They also teach new workouts, how to improve their form, performance and help set and achieve goals. The key roles and duties of a fitness professional are to: motivate, assist clients and measure heart rates and body fat levels. Trainers need to be patient, well organized and have time management as well as interpersonal skills.\"You are in a helping profession. Although you are not a social worker, psychologist or guidance counselor, neither are you simply a technician with advanced training in exercise science</string>
     <string name="text16">Carpentry is a skilled trade and a craft in which the primary work performed is the cutting, shaping and installation of building materials during the construction of buildings, ships, timber bridges, concrete formwork, etc. Carpenters traditionally worked with natural wood and did the rougher work such as framing, but today many other materials are also used[1] and sometimes the finer trades of cabinetmaking and furniture building are considered carpentry. In the United States, 98.5% of carpenters are male, and it was the fourth most male-dominated occupation in the country in 1999. In 2006 in the United States, there were about 1.5 million carpentry positions. Carpenters are usually the first t</string>
     <string name="text17">Most mechanics specialize in a particular field, such as air conditioning and refrigeration mechanics, auto mechanics, bicycle mechanics, boiler mechanics, general mechanics, industrial maintenance mechanics (millwrights), motorcycle mechanics, aircraft mechanics, heavy duty equipment mechanics, bus mechanics, truck mechanics,[2] diesel mechanics as well as tank mechanics in the armed services.  A mechanic is typically certified by a trade association or regional government power. Mechanics may be separated into two classes based on the type of machines they work on, heavyweight and lightweight. Heavyweight work is on large</string>
-    <string name="logout">Logout</string>
-    <string name="pro_det">We just require a few more details to sign you up as a Professional</string>
-    <string name="pro_about">About</string>
-    <string name="category">Category</string>
-    <string name="name">Name</string>
+
 
 </resources>
