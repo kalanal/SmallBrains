@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Admin;
 
 public class ServiceItem {
 

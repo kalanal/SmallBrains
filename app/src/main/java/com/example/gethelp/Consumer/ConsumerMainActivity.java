@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.gethelp.EditUser;
+import com.example.gethelp.Login;
+import com.example.gethelp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ConsumerMainActivity extends AppCompatActivity{
@@ -32,7 +35,7 @@ public class ConsumerMainActivity extends AppCompatActivity{
     }
     public void onSignOut(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
 }

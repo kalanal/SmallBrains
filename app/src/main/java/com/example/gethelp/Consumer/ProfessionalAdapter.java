@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -11,14 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gethelp.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 public class ProfessionalAdapter extends FirestoreRecyclerAdapter<ProfessionalItem, ProfessionalAdapter.ProfessionalHolder> {
 

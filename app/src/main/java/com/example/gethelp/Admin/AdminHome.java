@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Admin;
 
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.gethelp.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;

@@ -91,7 +91,7 @@
 
         <!-- Ryans Activities -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Admin.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 <!--             <intent-filter>-->
@@ -101,9 +101,9 @@
 <!--             <category android:name="android.intent.category.LAUNCHER" />-->
 <!--             </intent-filter>-->
         </activity>
-        <activity android:name=".ConsumerMainActivity"/>
-        <activity android:name=".BookProfessional"/>
-        <activity android:name=".ProfessionalAd"/>
+        <activity android:name=".Consumer.ConsumerMainActivity"/>
+        <activity android:name=".Consumer.BookProfessional"/>
+        <activity android:name=".Consumer.ProfessionalAd"/>
     </application>
 
 </manifest>
