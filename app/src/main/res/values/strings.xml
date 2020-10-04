@@ -84,5 +84,9 @@
     <string name="text16">Carpentry is a skilled trade and a craft in which the primary work performed is the cutting, shaping and installation of building materials during the construction of buildings, ships, timber bridges, concrete formwork, etc. Carpenters traditionally worked with natural wood and did the rougher work such as framing, but today many other materials are also used[1] and sometimes the finer trades of cabinetmaking and furniture building are considered carpentry. In the United States, 98.5% of carpenters are male, and it was the fourth most male-dominated occupation in the country in 1999. In 2006 in the United States, there were about 1.5 million carpentry positions. Carpenters are usually the first t</string>
     <string name="text17">Most mechanics specialize in a particular field, such as air conditioning and refrigeration mechanics, auto mechanics, bicycle mechanics, boiler mechanics, general mechanics, industrial maintenance mechanics (millwrights), motorcycle mechanics, aircraft mechanics, heavy duty equipment mechanics, bus mechanics, truck mechanics,[2] diesel mechanics as well as tank mechanics in the armed services.  A mechanic is typically certified by a trade association or regional government power. Mechanics may be separated into two classes based on the type of machines they work on, heavyweight and lightweight. Heavyweight work is on large</string>
     <string name="logout">Logout</string>
+    <string name="pro_det">We just require a few more details to sign you up as a Professional</string>
+    <string name="pro_about">About</string>
+    <string name="category">Category</string>
+    <string name="name">Name</string>
 
 </resources>
