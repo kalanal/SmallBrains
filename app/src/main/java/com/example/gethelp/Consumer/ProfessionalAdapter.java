@@ -127,7 +127,6 @@ public class ProfessionalAdapter extends FirestoreRecyclerAdapter<ProfessionalIt
             public void onClick(DialogInterface dialogInterface, int i) {
                 CollectionReference serviceRef = FirebaseFirestore.getInstance().collection("customerProblem");
                 serviceRef.add(new ServiceItem(explainedProb.getText().toString()));
-//                serviceRef.add(new ServiceItem(id));
             }
         });
 
