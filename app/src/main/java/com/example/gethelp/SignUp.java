@@ -1,10 +1,8 @@
 package com.example.gethelp;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.gethelp.Consumer.ConsumerMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -59,7 +58,7 @@ public class SignUp extends AppCompatActivity {
 
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),ConsumerMainActivity.class));
+            startActivity(new Intent(getApplicationContext(), ConsumerMainActivity.class));
             finish();
         }
 
@@ -107,24 +106,6 @@ public class SignUp extends AppCompatActivity {
                             }
                             if(Professional.isChecked()){
                                 user.put("type",professional);
-//                                AlertDialog.Builder enterProDetails = new AlertDialog.Builder(SignUp.this);
-//                                enterProDetails.setTitle("Alert!");
-//                                enterProDetails.setMessage("Do you wish to exit?");
-//                                enterProDetails.setCancelable(true);
-
-//                                enterProDetails.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialogInterface, int i) {
-//                                        finish();
-//                                    }
-//                                });
-//
-//                                enterProDetails.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                                    }
-//                                });
                             }
                             user.put("email", email);
                             user.put("uname" , username);

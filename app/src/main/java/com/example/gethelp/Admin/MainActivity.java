@@ -1,4 +1,4 @@
-package com.example.gethelp;
+package com.example.gethelp.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.gethelp.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,9 +82,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onPressViewSingleApproval(View view){
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ApproveUser()).addToBackStack(null).commit();
         setTitle(R.string.approve_user_title);
-    }
-
-    public void onPressDropdown(View view){
-        serviceTypes.onPressDropdown(view);
     }
 }

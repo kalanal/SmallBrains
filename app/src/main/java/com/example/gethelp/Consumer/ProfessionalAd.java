@@ -1,14 +1,16 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class BookProfessional extends AppCompatActivity {
+import com.example.gethelp.R;
+
+public class ProfessionalAd extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.book_professional);
+        setContentView(R.layout.professional_ad);
     }
 }

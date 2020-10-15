@@ -1,25 +1,20 @@
-package com.example.gethelp;
+package com.example.gethelp.Consumer;
 
-public class ServiceItem {
-    private String id;
+public class ProfessionalItem {
     private String name;
     private String category;
     private String about;
     private float rating;
 
-    public ServiceItem(String name, String category, String about, float rating) {
+    public ProfessionalItem(String name, String category, String about, float rating) {
         this.name = name;
         this.category = category;
         this.about = about;
         this.rating = rating;
     }
 
-    public ServiceItem() {
+    public ProfessionalItem() {
         //Empty constructor needed
-    }
-
-    public String getId() {
-        return id;
     }
 
     public String getName() {
