@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
                     android:paddingTop="10dp"
-                    android:text="Username: "
+                    android:text="Customer: "
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -124,7 +124,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="176dp"
-                android:background="#E1D7E3">
+                android:background="#D5C4D8">
 
                 <TextView
                     android:id="@+id/problem"
@@ -137,40 +137,110 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/problem_title"
+                <TextView
+                    android:id="@+id/customer_problem_fetch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/problem"
-                    android:layout_margin="3dp"
-                    android:backgroundTint="@color/graylight"
-                    android:ems="10"
-                    android:inputType="textMultiLine"
-                    android:text=".............."
-                    android:textColor="#292929" />
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Title of problem"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingBottom="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/problem_title"
+                    android:layout_below="@+id/customer_problem_fetch"
                     android:paddingStart="10dp"
                     android:paddingTop="10dp"
-                    android:text="Problem Description:"
+                    android:text="Problem description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/customer_description_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Description of problem"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="#D5C4D8">
+
+                <TextView
+                    android:id="@+id/solution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem Title:"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/problem_description"
+                    android:id="@+id/solution_fetch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/description"
-                    android:layout_margin="3dp"
+                    android:layout_below="@+id/solution"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingBottom="10dp"
+                    android:backgroundTint="@color/graylight"
+                    android:ems="10"
+                    android:inputType="textMultiLine"/>
+
+                <TextView
+                    android:id="@+id/solution_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/solution_fetch"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/solution_description_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/solution_description"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Description of problem"
                     android:backgroundTint="@color/graylight"
                     android:ems="10"
                     android:inputType="textMultiLine"
-                    android:textColor="#292929" />
+                    android:textColor="@color/colorPrimary" />
 
 
             </RelativeLayout>
@@ -194,7 +264,6 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/submit_button"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"

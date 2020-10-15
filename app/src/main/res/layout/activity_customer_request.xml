@@ -1,144 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CustomerRequest">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/textDefault"
-        android:backgroundTint="@color/colorBackground"
-        tools:context=".ProTipList">
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="3">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="395dp"
-            android:layout_height="374dp"
-            android:background="@color/textDefault"
-            android:textAlignment="viewStart"
-            android:textColor="#0E0D0D"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.389" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
 
-        <Button
-            android:id="@+id/button19"
-            android:layout_width="105dp"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/accept_btn"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.189"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.893" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="@color/colorPrimary">
 
-        <Button
-            android:id="@+id/button20"
-            android:layout_width="112dp"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/decline_btn"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.893" />
+                <ImageView
+                    android:id="@+id/customer_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"/>
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="154dp"
-            android:layout_height="82dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.439"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.728"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+                <TextView
+                    android:id="@+id/pro_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Customer: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@+id/customer_image"/>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customer_name_fetch"
+                    android:textColor="#FFFFFF"
+                    android:layout_toEndOf="@+id/pro_name"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pro_name"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Email: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@+id/customer_image"/>
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="154dp"
-            android:layout_height="82dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.728"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+                <TextView
+                    android:id="@+id/customer_email_fetch"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pro_name"
+                    android:textColor="#FFFFFF"
+                    android:layout_toEndOf="@+id/email"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="154dp"
-            android:layout_height="82dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.728"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Phone: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@+id/customer_image"/>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="367dp"
-            android:layout_height="56dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=" Client Name : Carlos Ward"
-            android:textAlignment="viewStart"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.227"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.157" />
+                <TextView
+                    android:id="@+id/customer_phone_fetch"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email"
+                    android:textColor="#FFFFFF"
+                    android:layout_toEndOf="@+id/phone"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="369dp"
-            android:layout_height="55dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=" Looking for a new website"
-            android:textAlignment="viewStart"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.19"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.22" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="372dp"
-            android:layout_height="240dp"
-            android:text=" I am a security firm owner, who is looking\n to expand my business over the Internet.\n I'm looking for a person who can build an\n informative website containing all the\n relevant details. \n\n For further information,\n E-mail : jonbaker@gmail.com\n Phone : 0718989890"
-            android:textColor="#100F0F"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.41"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.462" />
+            </RelativeLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="#D5C4D8">
+
+                <TextView
+                    android:id="@+id/problem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem Title:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/customer_problem_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/problem"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Title of problem"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingBottom="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customer_problem_fetch"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Problem description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/customer_description_fetch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Description of problem"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/userRespond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/darker_gray"
+                    android:backgroundTint="#03A9F4"
+                    android:text="Respond" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</RelativeLayout>

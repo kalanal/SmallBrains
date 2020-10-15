@@ -15,11 +15,11 @@
         <!-- Kalana's Activities -->
         <activity android:name=".SignUp"/>
         <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".UserProfile"
@@ -31,67 +31,27 @@
         <!-- Sudaraka's Activities -->
         <activity
             android:name=".ProfessionalProfile">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+       </activity>
+        <activity
+            android:name=".ProblemListPage">
+       </activity>
+        <activity
+            android:name=".CustomerRequestSolution">
        </activity>
         <activity
             android:name=".ServiceRequest"
-            android:label="@string/service_request">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            android:label="@string/service_request"/>
         </activity>
         <activity
             android:name=".CustomerRequest"
-            android:label="@string/customer_request">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            android:label="@string/customer_request"/>
         </activity>
         <activity
             android:name=".ServiceRequestList"
-            android:label="@string/service_request_list">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:label="@string/service_request_list"/>
         <activity
             android:name=".PerformanceReport"
-            android:label="@string/performance_report">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity
-            android:name=".CustomerRequestList"
-            android:label="@string/customer_request_list">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:label="@string/performance_report"/>
 
         <!-- Ryans Activities -->
         <activity

@@ -10,7 +10,7 @@
     <string name="approve_user_title">Approve User</string>
     <string name="consumer_home_title">Consumer Home</string>
     <string name="user_profile_title">User Profile</string>
-  
+
     <!--Placeholders-->
     <string name="about_placeholder">About</string>
     <string name="exp_placeholder">Professional Experience</string>
@@ -26,6 +26,7 @@
 
     <!--Sudaraka -->
     <string name="see_more_btn1">See More</string>
+    <string name="goback_btn">Go Back</string>
     <string name="accept_btn">Accept</string>
     <string name="decline_btn">Decline</string>
     <string name="respond_btn">Respond</string>

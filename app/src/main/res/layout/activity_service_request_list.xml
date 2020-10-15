@@ -1,230 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/adminHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/colorPrimary"
-    tools:context=".ServiceRequestList">
+    android:background="@color/colorBackground">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/textDefault"
-        android:backgroundTint="@color/colorBackground"
-        tools:context=".ProTipList"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="3">
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="366dp"
-            android:layout_height="110dp"
-            android:background="@color/textDefault"
-            android:text=" Liz Alba"
-            android:textAlignment="viewStart"
-            android:textColor="#0E0D0D"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.895" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="366dp"
-            android:layout_height="110dp"
-            android:background="@color/textDefault"
-            android:text=" Sanny Jon"
-            android:textAlignment="viewStart"
-            android:textColor="#0E0D0D"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.656" />
 
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="368dp"
-            android:layout_height="92dp"
-            android:background="@color/textDefault"
-            android:text=" Eon Morgan"
-            android:textAlignment="viewStart"
-            android:textColor="#0E0D0D"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.432" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="127dp"
-            android:layout_height="93dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="83dp"
-            android:layout_height="52dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.115"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.892"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="83dp"
-            android:layout_height="52dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.115"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.669"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-        <ImageView
-            android:id="@+id/imageView20"
-            android:layout_width="83dp"
-            android:layout_height="52dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.115"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.443"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="GetHelp"
-            android:textAlignment="center"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.147" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
 
-        <Button
-            android:id="@+id/button18"
-            android:layout_width="98dp"
-            android:layout_height="39dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/see_more_btn1"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.645"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.893" />
+            <RelativeLayout
+                android:id="@+id/userApprovals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground">
 
-        <Button
-            android:id="@+id/button15"
-            android:layout_width="98dp"
-            android:layout_height="39dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/see_more_btn1"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.645"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.674" />
+                <TextView
+                    android:id="@+id/userApprovalsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/service_request_list"
+                    android:textColor="#666666"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button17"
-            android:layout_width="98dp"
-            android:layout_height="39dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/see_more_btn1"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.645"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.464" />
 
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="193dp"
-            android:layout_height="51dp"
-            android:text="My printer is getting stuck \n and provides misprints."
-            android:textColor="#100F0F"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.658"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.826" />
 
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="141dp"
-            android:layout_height="47dp"
-            android:text="PC is overheating"
-            android:textColor="#100F0F"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.626"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.403" />
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userApprovalsTitle"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:columnOrderPreserved="false"
+                    android:layout_marginTop="30dp">
 
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="161dp"
-            android:layout_height="45dp"
-            android:text="My PC is not starting\n and keeps beeping."
-            android:textColor="#100F0F"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.626"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.602" />
 
-        <SearchView
-            android:layout_width="220dp"
-            android:layout_height="42dp"
-            android:background="@color/textDefault"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.423"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.275" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="6dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <RelativeLayout
+                            android:id="@+id/user1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff">
+
+                            <ImageView
+                                android:id="@+id/userPic1"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:clickable="false"
+                                android:padding="5dp"
+                                android:src="@mipmap/ic_launcher_round" />
+
+                            <TextView
+                                android:id="@+id/userName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/userPic1"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:text="Customer Name"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/userProf1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/userName1"
+                                android:layout_toRightOf="@id/userPic1"
+                                android:paddingStart="10dp"
+                                android:text="Problem Title"
+                                android:textColor="#000000"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="onPressViewSingleApproval"
+                                android:text="View" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="6dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <RelativeLayout
+                            android:id="@+id/user2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff">
+
+                            <ImageView
+                                android:id="@+id/userPic2"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:src="@mipmap/ic_launcher_round" />
+
+                            <TextView
+                                android:id="@+id/userName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/userPic2"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:text="John Doe"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/userProf2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/userName2"
+                                android:layout_toRightOf="@id/userPic2"
+                                android:paddingStart="10dp"
+                                android:text="Electrician"
+                                android:textColor="#000000"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:text="View" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="6dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <RelativeLayout
+                            android:id="@+id/user4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff">
+
+                            <ImageView
+                                android:id="@+id/userPic4"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:src="@mipmap/ic_launcher_round" />
+
+                            <TextView
+                                android:id="@+id/userName4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/userPic4"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:text="John Doe"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/userProf4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/userName4"
+                                android:layout_toRightOf="@id/userPic4"
+                                android:paddingStart="10dp"
+                                android:text="Electrician"
+                                android:textColor="#000000"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:text="View" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </GridLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</RelativeLayout>
