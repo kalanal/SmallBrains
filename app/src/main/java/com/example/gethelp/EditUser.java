@@ -103,8 +103,13 @@ public class EditUser extends Fragment{
         editUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(),EditUser.class);
-                startActivity(i);
+                Intent intent = new Intent(getActivity(), UserProfile.class);
+                intent.putExtra("email",email.getText().toString());
+                intent.putExtra("uname",uname.getText().toString());
+                intent.putExtra("age",age.getText().toString());
+                intent.putExtra("phone",phone.getText().toString());
+                intent.putExtra("town",town.getText().toString());
+                startActivity(intent);
             }
         });
     }
@@ -140,11 +145,5 @@ public class EditUser extends Fragment{
         });
 
     }
-
-//    public void onSignOut(View view) {
-//        FirebaseAuth.getInstance().signOut();
-//        startActivity(new Intent(getApplicationContext(),Login.class));
-//        finish();
-//    }
 
 }
