@@ -15,15 +15,6 @@
     <string name="about_placeholder">About</string>
     <string name="exp_placeholder">Professional Experience</string>
 
-    <!--ServiceTypes-->
-    <string-array name="Technician">
-        <item>IT Technician</item>
-        <item>Some Other Technician</item>
-        <item>Some Other Technician</item>
-    </string-array>
-    <string-array name="Carpenter"></string-array>
-    <string-array name="Electrician"></string-array>
-
     <!--Sudaraka -->
     <string name="see_more_btn1">See More</string>
     <string name="goback_btn">Go Back</string>
@@ -73,22 +64,5 @@
     <string name="name">Name</string>
     <string name="delete_profile">Delete Profile</string>
 
-    <!--Sampath -->
-    <string name="text1">John Moris</string>
-    <string name="text2">Modern Website Developer</string>
-    <string name="text3">HelpMe</string>
-    <string name="text4">4.9(674)views</string>
-    <string name="text5">From:Srilanka</string>
-    <string name="text6">Experience:10years</string>
-    <string name="text7">Avg.Response.Time:2 Hours</string>
-    <string name="text9">Web developers are found working in various types of organizations, including large corporations and governments, small and medium-sized companies, or alone as freelancers. Some web developers work for one organization as a permanent full-time employee, while others may work as independent consultants, or as contractors for an agency or at home personal use. Web developers typically handle both server-side and front-end logic. This usually involves implementing all the visual elements that users see and use in the web applications or use, as well as all the web services that are necessary to power the usage of their developing work. Salaries vary depending on the type of development work, location, and level of seniority.</string>
-    <string name="text10">William</string>
-    <string name="text11">Submit</string>
-    <string name="text12">Looking for a Webdeveloper</string>
-    <string name="text13">I am a startup businessman.i want a website for expand my business</string>
-    <string name="text14">Plumbing originated during ancient civilizations, as they developed public baths and needed to provide potable water and wastewater removal for larger numbers of people.[6]  The Mesopotamians introduced the world to clay sewer pipes around 4000 BCE, with the earliest examples found in the Temple of Bel at Nippur and at Eshnunna,[7] used to remove wastewater from sites, and capture rainwater, in wells. The city of Uruk contains the oldest known examples of brick constructed Latrines, constructed atop interconnecting fired clay sewer pipes, c.3200 BCE.[8][9] Clay pipes were later used in the Hittite city of Hattusa.[10] They had easily detachable and replaceable segments, and allowed for cleaning.</string>
-    <string name="text15">Fitness professionals screen participants for exercise programs, evaluate various fitness components, prescribe exercise to improve these components, and may also help clients with specific or chronic conditions.[1] Fitness professionals help challenge an individual by increasing their performance, as compared to when a person would work out on their own. They also teach new workouts, how to improve their form, performance and help set and achieve goals. The key roles and duties of a fitness professional are to: motivate, assist clients and measure heart rates and body fat levels. Trainers need to be patient, well organized and have time management as well as interpersonal skills.\"You are in a helping profession. Although you are not a social worker, psychologist or guidance counselor, neither are you simply a technician with advanced training in exercise science</string>
-    <string name="text16">Carpentry is a skilled trade and a craft in which the primary work performed is the cutting, shaping and installation of building materials during the construction of buildings, ships, timber bridges, concrete formwork, etc. Carpenters traditionally worked with natural wood and did the rougher work such as framing, but today many other materials are also used[1] and sometimes the finer trades of cabinetmaking and furniture building are considered carpentry. In the United States, 98.5% of carpenters are male, and it was the fourth most male-dominated occupation in the country in 1999. In 2006 in the United States, there were about 1.5 million carpentry positions. Carpenters are usually the first t</string>
-    <string name="text17">Most mechanics specialize in a particular field, such as air conditioning and refrigeration mechanics, auto mechanics, bicycle mechanics, boiler mechanics, general mechanics, industrial maintenance mechanics (millwrights), motorcycle mechanics, aircraft mechanics, heavy duty equipment mechanics, bus mechanics, truck mechanics,[2] diesel mechanics as well as tank mechanics in the armed services.  A mechanic is typically certified by a trade association or regional government power. Mechanics may be separated into two classes based on the type of machines they work on, heavyweight and lightweight. Heavyweight work is on large</string>
 
 </resources>

@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:maxHeight="80dp"
             android:layout_margin="10dp"
-            android:text="@string/text14"
+            android:text="Description"
             android:textColor="#666"
             android:textSize="15sp"
             android:layout_below="@id/service_category"

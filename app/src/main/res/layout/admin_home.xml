@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_wave">
 
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +89,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_below="@id/servicePerformanceTitle"
-                    android:layout_marginRight="50dp"/>
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
 
 
             </RelativeLayout>
@@ -109,8 +109,7 @@
             <RelativeLayout
                 android:id="@+id/userApprovals"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorBackground">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/userApprovalsTitle"
@@ -124,6 +123,7 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/allApprovalsBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_alignParentRight="true"
@@ -139,15 +139,13 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/approval_recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/userApprovalsTitle"
-                    android:layout_marginTop="30dp"
-                />
-
+                    android:layout_height="240dp"
+                    android:layout_below="@+id/allApprovalsBtn"/>
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+
 
 </RelativeLayout>
