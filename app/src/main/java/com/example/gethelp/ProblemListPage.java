@@ -15,11 +15,17 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.w3c.dom.Document;
 
 public class ProblemListPage extends AppCompatActivity{
 
     CustomerRequestList list = new CustomerRequestList();
     ProfessionalProfile editUser1 = new ProfessionalProfile();
+    FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +51,14 @@ public class ProblemListPage extends AppCompatActivity{
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
+    }
+
+    private void checkApproved(){
+        String uid = fAuth.getCurrentUser().getUid();
+        DocumentReference doc = FirebaseFirestore.getInstance().collection("professionals").document(uid);
+        if(doc == null){
+            FirebaseAuth.getInstance().signOut();
+        }
     }
 
 
