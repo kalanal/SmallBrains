@@ -2,40 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_wave"
     android:id="@+id/layout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CustomerRequest">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alignmentMode="alignMargins"
-        android:columnCount="1"
-        android:columnOrderPreserved="false"
-        android:rowCount="3">
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_margin="12dp"
             app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+            app:cardElevation="6dp"
+            android:id="@+id/cardViewPro">
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
+                android:layout_height="120dp"
                 android:background="@color/colorPrimary">
 
-                <ImageView
-                    android:id="@+id/customer_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"/>
 
                 <TextView
                     android:id="@+id/pro_name"
@@ -114,23 +103,13 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_rowWeight="2"
-            android:layout_rowSpan="2"
-            android:layout_columnWeight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBackground">
-
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/cardViewPro"
                 android:id="@+id/problem_recycler"
                 android:scrollbars="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="500dp"
+                android:layout_marginBottom="10dp"
+                />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    </GridLayout>
 </RelativeLayout>

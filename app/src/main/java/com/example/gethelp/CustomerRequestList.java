@@ -30,12 +30,13 @@ import com.google.firebase.storage.StorageReference;
 
 public class CustomerRequestList extends Fragment {
 
+    FirebaseAuth fAuth;
     View view;
     TextView name,email,type;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference problemRef = db.collection("customerProblem");
     private CollectionReference proRef = db.collection("users");
-    private CollectionReference user = db.collection("users");
+    private CollectionReference user = db.collection("professionals");
 
     private ProblemAdapter adapter;
 
@@ -52,6 +53,7 @@ public class CustomerRequestList extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        fAuth = FirebaseAuth.getInstance();
         setUpRecyclerView();
         setupPage();
     }
@@ -67,7 +69,6 @@ public class CustomerRequestList extends Fragment {
         adapter = new ProblemAdapter(options);
 
         RecyclerView recyclerView = view.findViewById(R.id.problem_recycler);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
     }
@@ -85,16 +86,21 @@ public class CustomerRequestList extends Fragment {
     }
 
     public void setupPage(){
-        DocumentReference docRef = proRef.document("iCKRDskB5VS36j1ZOGTMiqylwaR2");
+        String uid = fAuth.getCurrentUser().getUid();
+//        DocumentReference doc = FirebaseFirestore.getInstance().collection("professionals").document(uid);
+        DocumentReference docRef = proRef.document(uid);
+        DocumentReference userRef = user.document(uid);
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
+
+
                     if (document.exists()) {
                         name.setText(document.getString("uname"));
-                        type.setText(document.getString("type"));
+                        type.setText(document.getString("phone"));
                         email.setText(document.getString("email"));
                     } else {
                         Log.d("title", "No such document");

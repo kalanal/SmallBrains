@@ -25,6 +25,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.StorageReference;
+import org.w3c.dom.Document;
 
 public class ProblemListPage extends AppCompatActivity{
 
@@ -51,11 +52,12 @@ public class ProblemListPage extends AppCompatActivity{
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, list).addToBackStack(null).commit();
         setTitle(R.string.consumer_home_title);
     }
+
     public void onClickUser(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, editUser).addToBackStack(null).commit();
         setTitle(R.string.user_profile_title);
-        startActivity(new Intent(getApplicationContext(),ProfessionalProfile.class));
-        finish();
     }
+
     public void onSignOut(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
