@@ -58,8 +58,6 @@
 <!--             </intent-filter>-->
         </activity>
         <activity android:name=".Consumer.ConsumerMainActivity"/>
-        <activity android:name=".Consumer.BookProfessional"/>
-        <activity android:name=".Consumer.ProfessionalAd"/>
     </application>
 
 </manifest>
