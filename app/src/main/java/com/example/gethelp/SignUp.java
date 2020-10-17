@@ -86,10 +86,7 @@ public class SignUp extends AppCompatActivity {
                     Password.setError("Require more than 6 characters");
                     return;
                 }
-//                if(!Consumer.isChecked() || !Professional.isChecked()){
-//                    Consumer.setError("Please select a category");
-//                    return;
-//                }
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

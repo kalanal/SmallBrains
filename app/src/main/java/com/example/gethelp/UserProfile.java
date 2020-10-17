@@ -33,7 +33,6 @@ public class UserProfile extends AppCompatActivity {
     EditText userEmail,userName,userAge,userPhone,userTown;
     Button saveBtn, deleteProBtn;
     ImageView profileImage;
-    ProgressBar progressBar;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -121,12 +120,10 @@ public class UserProfile extends AppCompatActivity {
                 dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-//                        progressBar.setVisibility(View.VISIBLE);
                         user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
-//                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(UserProfile.this,"Account Deleted Succesfully",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(UserProfile.this,Login.class);
                                     startActivity(intent);
