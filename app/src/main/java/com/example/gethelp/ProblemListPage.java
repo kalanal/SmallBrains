@@ -30,7 +30,7 @@ import org.w3c.dom.Document;
 public class ProblemListPage extends AppCompatActivity{
 
     CustomerRequestList list = new CustomerRequestList();
-    ProfessionalProfile editUser1 = new ProfessionalProfile();
+    EditUser editUser = new EditUser();
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
