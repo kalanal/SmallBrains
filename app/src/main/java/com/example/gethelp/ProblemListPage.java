@@ -24,6 +24,7 @@ public class ProblemListPage extends AppCompatActivity{
 
     CustomerRequestList list = new CustomerRequestList();
     ProfessionalProfile editUser1 = new ProfessionalProfile();
+    EditUser editUser = new EditUser();
     FirebaseAuth fAuth;
 
     @Override
@@ -42,11 +43,12 @@ public class ProblemListPage extends AppCompatActivity{
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, list).addToBackStack(null).commit();
         setTitle(R.string.consumer_home_title);
     }
+
     public void onClickUser(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, editUser).addToBackStack(null).commit();
         setTitle(R.string.user_profile_title);
-        startActivity(new Intent(getApplicationContext(),ProfessionalProfile.class));
-        finish();
     }
+
     public void onSignOut(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
