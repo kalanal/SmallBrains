@@ -1,6 +1,7 @@
 package com.example.gethelp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,14 +23,25 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class Login extends AppCompatActivity {
 
+    private static final String TAG = "test123";
     Button Loginbtn,SignUpbtn,forgotpwdLink;
     EditText Email, Password;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
-
+    FirebaseFirestore fStore;
+    String userId;
+    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,8 @@ public class Login extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar2);
         forgotpwdLink = findViewById(R.id.forgotpwd);
         fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         Loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +78,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this,"Login successful" , Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), ConsumerMainActivity.class));
+                            login();
                         }else{
                             Toast.makeText(Login.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                          }
@@ -126,6 +140,22 @@ public class Login extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),ConsumerMainActivity.class));
             finish();
         }
+    }
+
+    public void login(){
+        userId = fAuth.getCurrentUser().getUid();
+        DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(value.getString("type").equals("Consumer")) {
+                    Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), ConsumerMainActivity.class));
+
+                }else if(value.getString("type").equals("Professional"))
+                    startActivity(new Intent(getApplicationContext(), ProblemListPage.class));
+            }
+        });
     }
 }
 

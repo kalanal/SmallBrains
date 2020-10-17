@@ -15,11 +15,11 @@
         <!-- Kalana's Activities -->
         <activity android:name=".SignUp"/>
         <activity android:name=".Login">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".UserProfile"
@@ -34,21 +34,27 @@
        </activity>
         <activity
             android:name=".ProblemListPage">
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
        </activity>
         <activity
             android:name=".CustomerRequestSolution">
        </activity>
         <activity
             android:name=".ServiceRequest"
-            android:label="@string/service_request"/>
+            android:label="@string/service_request">
         </activity>
         <activity
             android:name=".CustomerRequest"
-            android:label="@string/customer_request"/>
+            android:label="@string/customer_request">
         </activity>
         <activity
             android:name=".ServiceRequestList"
-            android:label="@string/service_request_list"/>
+            android:label="@string/service_request_list">
+        </activity>
         <activity
             android:name=".PerformanceReport"
             android:label="@string/performance_report"/>
