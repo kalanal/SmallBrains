@@ -29,28 +29,16 @@
         <activity android:name=".ProfessionalDetails"/>
       
         <!-- Sudaraka's Activities -->
-        <activity
-            android:name=".ProfessionalProfile">
-       </activity>
-        <activity
-            android:name=".ProblemListPage">
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
 
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
-       </activity>
-        <activity
-            android:name=".CustomerRequestSolution">
-       </activity>
+        <activity android:name=".ProfessionalProfile"/>
+        <activity android:name=".ProblemListPage"/>
+        <activity android:name=".CustomerRequestSolution"/>
         <activity
             android:name=".ServiceRequest"
-            android:label="@string/service_request">
-        </activity>
+            android:label="@string/service_request"/>
         <activity
             android:name=".CustomerRequest"
-            android:label="@string/customer_request">
-        </activity>
+            android:label="@string/customer_request"/>
         <activity
             android:name=".ServiceRequestList"
             android:label="@string/service_request_list">
